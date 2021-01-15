@@ -11,23 +11,6 @@
         "networkSecurityGroupName": {
             "value": "DG-ARM-Windows2019Server-nsg"
         },
-        "networkSecurityGroupRules": {
-            "value": [
-                {
-                    "name": "HTTPS",
-                    "properties": {
-                        "priority": 300,
-                        "protocol": "TCP",
-                        "access": "Allow",
-                        "direction": "Inbound",
-                        "sourceAddressPrefix": "*",
-                        "sourcePortRange": "*",
-                        "destinationAddressPrefix": "*",
-                        "destinationPortRange": "443"
-                    }
-                }
-            ]
-        },
         "subnetName": {
             "value": "default"
         },
