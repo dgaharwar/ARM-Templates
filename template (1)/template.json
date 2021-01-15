@@ -11,9 +11,6 @@
         "networkSecurityGroupName": {
             "type": "string"
         },
-        "networkSecurityGroupRules": {
-            "type": "array"
-        },
         "subnetName": {
             "type": "string"
         },
