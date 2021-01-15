@@ -1,0 +1,74 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "networkInterfaceName": {
+            "value": "dg-arm-windows2016se789"
+        },
+        "networkSecurityGroupName": {
+            "value": "DG-ARM-Windows2016Server-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/3b6ff759-299c-4a48-bef8-d1e612b57658/resourceGroups/rmg-ops/providers/Microsoft.Network/virtualNetworks/rmg-ops"
+        },
+        "publicIpAddressName": {
+            "value": "DG-ARM-Windows2016Server-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Static"
+        },
+        "publicIpAddressSku": {
+            "value": "Standard"
+        },
+        "virtualMachineName": {
+            "value": "DG-ARM-Windows2016Server"
+        },
+        "virtualMachineComputerName": {
+            "value": "DG-ARM-Windows2"
+        },
+        "virtualMachineRG": {
+            "value": "rmg-ops"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2s"
+        },
+        "adminUsername": {
+            "value": "deepti"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "patchMode": {
+            "value": "Manual"
+        },
+        "zone": {
+            "value": "1"
+        }
+    }
+}
