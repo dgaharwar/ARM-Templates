@@ -8,11 +8,11 @@
         },
         "networkInterfaceName": {
             "type": "string",
-            "defaultValue": "dg-arm-centos79"
+            "defaultValue": "dg-nic-win2016"
         },
         "networkSecurityGroupName": {
             "type": "string",
-            "defaultValue": "DG-ARM-CentOS79-nsg"
+            "defaultValue": "dg-win2016-nsg"
         },
         "subnetName": {
             "type": "string",
@@ -24,7 +24,7 @@
         },
         "publicIpAddressName": {
             "type": "string",
-            "defaultValue": "DG-ARM-CentOS-ip"
+            "defaultValue": "dg-win2016-ip"
         },
         "publicIpAddressType": {
             "type": "string",
@@ -36,11 +36,11 @@
         },
         "virtualMachineName": {
             "type": "string",
-            "defaultValue": "DG-ARM-CentOS79"
+            "defaultValue": "dg-vm-win2016"
         },
         "virtualMachineComputerName": {
             "type": "string",
-            "defaultValue": "DG-ARM-Cent"
+            "defaultValue": "dg-cn-win2016"
         },
         "virtualMachineRG": {
             "type": "string",
@@ -52,7 +52,7 @@
         },
         "virtualMachineSize": {
             "type": "string",
-            "defaultValue": "Standard_B2s"
+            "defaultValue": "Standard_A2_V2"
         },
         "adminUsername": {
             "type": "string",
@@ -113,9 +113,9 @@
             "properties": {
                 "securityRules": [
                     {
-                        "name": "ssh",
+                        "name": "SSH",
                         "properties": {
-                            "priority": 300,
+                            "priority": 100,
                             "protocol": "TCP",
                             "access": "Allow",
                             "direction": "Inbound",
@@ -163,9 +163,9 @@
                         }
                     },
                     "imageReference": {
-                        "publisher": "OpenLogic",
-                        "offer": "CentOS",
-                        "sku": "7_9-gen2",
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
                         "version": "latest"
                     }
                 },
@@ -202,7 +202,7 @@
     "outputs": {
         "adminUsername": {
             "type": "string",
-            "value": "[parameters('adminUsername')]"
+            "defaultValue": "[parameters('adminUsername')]"
         }
     }
 }
